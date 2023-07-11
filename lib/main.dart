@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Adulting',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -28,14 +28,39 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.yellow),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'ADULTING by edinsoft'),
     );
   }
 }
-
+//Here is my goal to adding a menu bar and search option VVVV it is throwing an error stating that "title" next to child is not listed (L:53)
+//@override
+//Widget build(BuildContext context) {
+  //return Container(
+    //height: 56
+    //padding: const EdgeInsets.symmetric(horizontal: 8),
+    //decoration: BoxDecoration(color: Colors.blue[500]),
+    //child: Row(
+      //children: [
+        //const IconButton(
+          //icon: Icon(Icons.menu),
+          //tooltip: 'Navigation menu',
+          //onPressed: null
+        //),
+        //Expanded(
+          //child: Title,
+        //),
+        //const IconButton(
+          //icon: Icon(Icons.search),
+          //tooltip: 'Search',
+          //onPressed: null,
+        //)
+      //],
+    //),
+  //);
+//}
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
@@ -106,7 +131,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have pushed the button this many times:',
+              'You have pushed my damn buttons this many times:',
             ),
             Text(
               '$_counter',
