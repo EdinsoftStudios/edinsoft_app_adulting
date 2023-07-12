@@ -1,3 +1,5 @@
+//import 'dart:js_interop';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -36,31 +38,32 @@ class MyApp extends StatelessWidget {
   }
 }
 //Here is my goal to adding a menu bar and search option VVVV it is throwing an error stating that "title" next to child is not listed (L:53)
-//@override
-//Widget build(BuildContext context) {
-  //return Container(
-    //height: 56
-    //padding: const EdgeInsets.symmetric(horizontal: 8),
-    //decoration: BoxDecoration(color: Colors.blue[500]),
-    //child: Row(
-      //children: [
-        //const IconButton(
-          //icon: Icon(Icons.menu),
-          //tooltip: 'Navigation menu',
-          //onPressed: null
-        //),
-        //Expanded(
-          //child: Title,
-        //),
-        //const IconButton(
-          //icon: Icon(Icons.search),
-          //tooltip: 'Search',
-          //onPressed: null,
-        //)
-      //],
-    //),
-  //);
-//}
+@override
+Widget build(BuildContext context) {
+  return Container(
+    height: 56,
+    padding: const EdgeInsets.symmetric(horizontal: 8),
+    decoration: BoxDecoration(color: Colors.blue[500]),
+    child: Row(
+      children: [
+        const IconButton(
+          icon: Icon(Icons.menu),
+          tooltip: 'Navigation menu',
+          onPressed: null
+        ),
+        Expanded(
+          child: Title(color: Colors.blue, key: null, child: const Icon(Icons.add),
+          )
+        ),
+        const IconButton(
+          icon: Icon(Icons.search),
+          tooltip: 'Search',
+          onPressed: null,
+        )
+      ],
+    ),
+  );
+}
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
