@@ -33,7 +33,138 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.yellow),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'ADULTING by edinsoft'),
+          home: const MyHomePage(title: '                ADULTING by edinsoft'),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({key, required this.title}) : super(key: key);
+
+  final String title;
+
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+  final _formKey = GlobalKey<FormState>();
+
+  TextEditingController emailController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController ageController = TextEditingController();
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    nameController.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+    ageController.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: Form(
+          key: _formKey,
+          child: SingleChildScrollView(
+              child: Column(children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: TextFormField(
+                    controller: nameController,
+                    decoration: InputDecoration(
+                      labelText: "Enter User Name",
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                    // The validator receives the text that the user has entered.
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Enter User Name';
+                      }
+                      return null;
+                    },
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: TextFormField(
+                    controller: emailController,
+                    decoration: InputDecoration(
+                      labelText: "Enter Email",
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                    // The validator receives the text that the user has entered.
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Enter Email';
+                      }
+                      return null;
+                    },
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: TextFormField(
+                    controller: ageController,
+                    decoration: InputDecoration(
+                      labelText: "Enter age",
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                    // The validator receives the text that the user has entered.
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Enter age';
+                      }
+                      return null;
+                    },
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: TextFormField(
+                    controller: passwordController,
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      labelText: "Enter password",
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                    // The validator receives the text that the user has entered.
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Enter password';
+                      }
+                      return null;
+                    },
+                  ),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {}
+                  },
+                  child: const Text('Submit'),
+                )
+              ]))),
     );
   }
 }
