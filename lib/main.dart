@@ -196,8 +196,8 @@ Widget build(BuildContext context) {
     ),
   );
 }
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key, required this.title});
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -214,7 +214,7 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class LoginPageState extends State<MyHomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
