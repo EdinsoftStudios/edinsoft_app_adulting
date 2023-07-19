@@ -44,6 +44,7 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
+  // ignore: library_private_types_in_public_api
   _MyHomePageState createState() => _MyHomePageState();
 }
 
@@ -172,7 +173,7 @@ class _MyHomePageState extends State<MyHomePage> {
 @override
 Widget build(BuildContext context) {
   return Container(
-    height: 56,
+    height: 50,
     padding: const EdgeInsets.symmetric(horizontal: 8),
     decoration: BoxDecoration(color: Colors.blue[500]),
     child: Row(
@@ -265,7 +266,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have pushed my damn buttons this many times:',
+              'You have changed your furnace filter this many times this year:',
             ),
             Text(
               '$_counter',
